@@ -3,14 +3,16 @@
     <head>
         <meta charset='utf-8'>
         <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <!--<meta http-equiv="Content-Security-Policy" content="default-src 'self'">-->
         <title>Erregistro Orria</title>
         <meta name='viewport' content='width=device-width, initial-scale=1'>
         <link rel='stylesheet' type='text/css' media='screen' href='erregistroorria-1.css'>
-        <script src='main.js'></script>
+        <!--<script src='main.js'></script>-->
     </head>
     <body>
         <div class="sesion">
             <h1>Erregistratu</h1>
+            <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
             <form action='erregistratu.php' method="post">
                 <div class="username">
                     <input type="text" required name="Izena" pattern="[A-Za-z]{1,20}">
@@ -47,13 +49,17 @@
                     <input type="Reset" value="Erreseteatu">
                 </div>
                 <div class="buttons">
-                    <input type="submit" onclick="itzuli()" value="Itzuli">
-                  </div>
-                  <script>
+                    <input type="submit" onclick="window.location.href='index.html'" value="Itzuli">
+                </div>
+                <div>
+                    <input type="hidden" name=_token value="">
+                </div>
+                <!--<script>
                     function itzuli(){
                     window.location.href="index.html"
                   }
-                  </script>
+                </script>-->
+                <!--<input type="hidden" name="_token" value="{{ csfr_token()}}" />-->
             </form>
         </div>
     </body>

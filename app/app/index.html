@@ -3,15 +3,20 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <!--<meta http-equiv="Content-Security-Policy" content="script-src 'self'">-->
+    <meta http-equiv="Content-Security-Policy" content="frame-ancestors">
     <title>Saioa hasi</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta http-equiv="ServerTokens" content="Prod">
     <link rel='stylesheet' type='text/css' media='screen' href='registro.css'>
-    <script src='main.js'></script>
+    <!--<meta content="X-Content-Type-Options=nosniff" http-equiv="Content-Type" />-->
+    <!--<script src='main.js'></script>-->
 </head>
 <body>
     <div class="sesion">
         <h1>Saioa hasi</h1>
-        <form action='login.php' method="post">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self'">
+	<form action='login.php' method="post">
             <div class="username">
                  <input type="text" required name="Izena">
                 <label>Erabiltzailea</label>
@@ -24,15 +29,17 @@
                 <input type="submit" value="Sartu">
             </div>
             <div class="buttons">
-                <input type="submit" onclick="pageerregistratu()" value="Erregistratu">
+                <input type="submit" onclick="window.location.href='erregistroorria.html'" value="Erregistratu">
             </div>
-            <script>
+            <div>
+                <input type="hidden" name="_token" value="" >
+            </div>
+            <!--<script>
                 function pageerregistratu(){
-                        window.location.href="erregistroorria.html"
+                        window.location.href="erregistroorria.html";
                 }
-            </script>
+            </script>-->
         </form>
-        
-    </div>
+     </div>
 </body>
 </html>
